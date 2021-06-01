@@ -23,6 +23,6 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('FirstApp/', postListView),
-    path('', include("FirstApp.FirstAppURLs"))
+    path('help/', include("FirstApp.FirstAppURLs"))
     # path("testView/", include("firstApp.appURL"))
 ]

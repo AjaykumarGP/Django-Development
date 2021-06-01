@@ -16,3 +16,11 @@ def postListView(request):
 
 def testView(request):
 	return HttpResponse("Hello there!")
+
+def helpView(request):
+	sampleDict = {"Help": "How may I help you?"}
+	return render(request, "FirstApp/helpPage.html", context = sampleDict)
+
+def index(request):
+	sampleDict = {"insertHere" : "Hello, I'm from views.py and rendering to index.html in templates folder in root directory"}
+	return render(request, "FirstApp/index.html", context = sampleDict)	
