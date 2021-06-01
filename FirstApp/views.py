@@ -12,7 +12,7 @@ def postListView(request):
 		"postObjects" : postObjects
 	}
 	#render(request, "html", front transition data in dict)
-	return render(request, "Posts/index.html", context)
+	return render(request, "FirstApp/index.html", context)
 
 def testView(request):
 	return HttpResponse("Hello there!")
