@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from django.http import HttpResponse
-from .models import Post
+from .models import Post, UserInfo
 # Create your views here.
 
 #CRUD operations
@@ -24,3 +24,11 @@ def helpView(request):
 def index(request):
 	sampleDict = {"insertHere" : "Hello, I'm from views.py and rendering to index.html in templates folder in root directory"}
 	return render(request, "FirstApp/index.html", context = sampleDict)	
+
+def displayUserInfo(request):
+
+	userInfo = UserInfo.objects.all()
+	userDict = {
+		"allData" : userInfo
+	}
+	return render(request, "FirstApp/userInfo.html", context = userDict)

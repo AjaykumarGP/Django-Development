@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Displaying user information</title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/mystyle.css" %}">
+</head>
+<body>
+
+	<h1>Displaying user informations</h1>
+
+	<!-- {{userDict}} -->
+	<div class = "userInfo">
+		<table>
+			{% for user in allData %}
+		
+			<tr>
+				<td>
+					{{ user }}
+				</td>
+				<td>
+					{{ user }}
+				</td>
+			</tr>
+
+			{% endfor %}
+		</table>
+
+		
+		
+
+	</div>
+	
+
+
+</body>
+</html>

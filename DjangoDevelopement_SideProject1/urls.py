@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('FirstApp/', postListView),
     path('index/', index),
-    path('help/', include("FirstApp.FirstAppURLs"))
+    path('help/', include("FirstApp.FirstAppURLs")),
+    path('user/', include("FirstApp.FirstAppURLs")),
     # path("testView/", include("firstApp.appURL"))
 ]
