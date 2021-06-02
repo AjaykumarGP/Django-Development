@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 
 from FirstApp import views
-from FirstApp.views import postListView, testView
+from FirstApp.views import postListView, testView, index
 from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('FirstApp/', postListView),
+    path('index/', index),
     path('help/', include("FirstApp.FirstAppURLs"))
     # path("testView/", include("firstApp.appURL"))
 ]

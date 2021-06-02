@@ -1,13 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>First Application</title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/mystyle.css" %}">
 </head>
 <body>
 
-	<h1>Hello world!!!!!!!!!!</h1>
-	{{ insertHere }}
+	<h1>This is Game of thrones poster</h1>
+	<img src="{% static "images/GOT poster.jpg" %}", alt="Sorry didn't show the picture">
 
 </body>
 </html>
