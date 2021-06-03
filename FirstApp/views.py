@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 from .models import Post, UserInfo
+from . import forms
+# from forms import BasicForm
 # Create your views here.
 
 #CRUD operations
@@ -32,3 +34,21 @@ def displayUserInfo(request):
 		"allData" : userInfo
 	}
 	return render(request, "FirstApp/userInfo.html", context = userDict)
+
+def viewBasicForm(request):
+	form = forms.BasicForm()
+
+	if request.method == "POST":
+		form = forms.BasicForm(request.POST)
+
+		if form.is_valid():
+			#Write the code here after getting data from the user(html page)
+			#First clean the data
+			print("Validation success")
+			print("Name:" + form.cleaned_data['name'])
+			print("Email:" + form.cleaned_data['email'])
+			print("Text:" + form.cleaned_data['text'])
+
+	return render(request, "FirstApp/basicForm.html", context = {
+		"form" : form
+		})

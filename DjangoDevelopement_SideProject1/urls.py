@@ -25,6 +25,6 @@ urlpatterns = [
     path('FirstApp/', postListView),
     path('index/', index),
     path('help/', include("FirstApp.FirstAppURLs")),
-    path('user/', include("FirstApp.FirstAppURLs")),
+    path('FirstApp/', include("FirstApp.FirstAppURLs")),
     # path("testView/", include("firstApp.appURL"))
 ]
