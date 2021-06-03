@@ -44,3 +44,13 @@ class UserInfo(models.Model):
 	def __str__(self):
 		return self.email
 
+
+#student info model
+class StudentInfo(models.Model):
+	firstName = models.CharField(max_length=100)
+	lastName = models.CharField(max_length=100)
+	course = models.CharField(max_length=100)
+
+	def __str__(self):
+		return self.firstName
+

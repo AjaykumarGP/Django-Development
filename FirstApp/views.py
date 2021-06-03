@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.http import HttpResponse
 from .models import Post, UserInfo
 from . import forms
@@ -39,6 +39,7 @@ def viewBasicForm(request):
 	form = forms.BasicForm()
 
 	if request.method == "POST":
+
 		form = forms.BasicForm(request.POST)
 
 		if form.is_valid():
@@ -52,3 +53,16 @@ def viewBasicForm(request):
 	return render(request, "FirstApp/basicForm.html", context = {
 		"form" : form
 		})
+
+def viewStudentInfoForm(request):
+	form = forms.StudentInfoForm()
+
+	if request.method == "POST":
+		form = forms.StudentInfoForm(request.POST)
+
+		if form.is_valid():
+			form.save()
+			messages.success(request, "Data has been stored successfully")
+			return redirect('/FirstApp/studentinfo')
+
+	return render(request, 'FirstApp/studentInfo.html', context = {"form":form})
