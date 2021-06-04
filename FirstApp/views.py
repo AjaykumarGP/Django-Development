@@ -66,3 +66,11 @@ def viewStudentInfoForm(request):
 			return redirect('/FirstApp/studentinfo')
 
 	return render(request, 'FirstApp/studentInfo.html', context = {"form":form})
+
+
+
+def other(request):
+	return render(request, "FirstApp/other.html")
+
+def relativeURL(request):
+	return render(request, "FirstApp/relativeURL.html")
