@@ -12,4 +12,5 @@ urlpatterns = [
     path('studentinfo/', viewStudentInfoForm),
     path('relative/', relativeURL, name = "relative"),
     path('other/', other, name = "other"),
+    path('index/', index, name = "index"),
 ]
